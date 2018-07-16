@@ -36,19 +36,19 @@ struct surnameMap
 struct List {
 	surnameMap* head;
 	surnameMap* last;
-	surnameMap* createNode(char*);   // Yeni soyadı için "node" oluşturuyorum
-	studentInfo* createStudent(char*, char*);  // Yeni öğrenci için "node" oluşturuyorum
+	surnameMap* createNode(char*);   // Yeni soyadÃ½ iÃ§in "node" oluÃ¾turuyorum
+	studentInfo* createStudent(char*, char*);  // Yeni Ã¶Ã°renci iÃ§in "node" oluÃ¾turuyorum
 	int recordCount;
 	void createList();
-	void readFile(); // Dosyayı okuyup, içinde insertAll çağırıyorum
+	void readFile(); // DosyayÃ½ okuyup, iÃ§inde insertAll Ã§aÃ°Ã½rÃ½yorum
 	void insertAll(char*, char*);
 	void insertNewRecord(); 
 	void deleteStudent();
 	void deleteSurnameNode(); 
 	void updateList();
 	void writeToFile();
-	string generateMail(studentInfo*); // Otomatik mail oluşturucu
-	bool checkMap(char*); // Aynı soyadından var mı kontrol ediyor
+	string generateMail(studentInfo*); // Otomatik mail oluÃ¾turucu
+	bool checkMap(char*); // AynÃ½ soyadÃ½ndan var mÃ½ kontrol ediyor
 };
 void List::createList()
 {
@@ -182,7 +182,7 @@ bool List::checkMap(char* surname)
 	}
 	return true;
 }
-void List::insertAll(char* newName, char* newSurname) // alfabetik sıralamada burada yapılıyor
+void List::insertAll(char* newName, char* newSurname) // alfabetik sÃ½ralamada burada yapÃ½lÃ½yor
 {
 	surnameMap *traverse = head;
 	surnameMap *tail = NULL;
@@ -192,7 +192,7 @@ void List::insertAll(char* newName, char* newSurname) // alfabetik sıralamada bu
 	char *cstr = &email[0u];
 	strcpy(ctemp->email, cstr);
 	
-	if (checkMap(temp->surname)) // eğer soyadından yoksa
+	if (checkMap(temp->surname)) // eÃ°er soyadÃ½ndan yoksa
 	{
 		if (head == NULL) 
 		{
@@ -246,7 +246,7 @@ void List::insertAll(char* newName, char* newSurname) // alfabetik sıralamada bu
 			}
 		}
 	}
-	else // eğer soyadı varsa
+	else // eÃ°er soyadÃ½ varsa
 	{
 		for (int i = 1; i <= recordCount; i++)
 		{
